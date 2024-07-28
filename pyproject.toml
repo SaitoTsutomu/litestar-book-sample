@@ -6,9 +6,9 @@ readme = "README.md"
 version = "0.1.0"
 
 [tool.poetry.dependencies]
-python = "^3.11"
-litestar = {extras = ["sqlalchemy", "standard"], version = "^2.5.1"}
-aiosqlite = "^0.19.0"
+aiosqlite = "^0"
+litestar = {extras = ["sqlalchemy", "standard"], version = "^2.5"}
+python = "^3.12"
 
 [build-system]
 build-backend = "poetry.core.masonry.api"

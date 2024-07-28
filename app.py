@@ -2,12 +2,10 @@ from uuid import UUID
 
 from litestar import Litestar, delete, get, post, put
 from litestar.contrib.sqlalchemy.base import UUIDBase
-from litestar.contrib.sqlalchemy.plugins import (
-    AsyncSessionConfig,
-    SQLAlchemyAsyncConfig,
-    SQLAlchemyInitPlugin,
-    SQLAlchemySerializationPlugin,
-)
+from litestar.contrib.sqlalchemy.plugins import (AsyncSessionConfig,
+                                                 SQLAlchemyAsyncConfig,
+                                                 SQLAlchemyInitPlugin,
+                                                 SQLAlchemySerializationPlugin)
 from litestar.exceptions import HTTPException
 from sqlalchemy import ForeignKey, select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -118,7 +116,7 @@ async def on_startup() -> None:
 
 
 app = Litestar(
-    route_handlers=[
+    [
         add_author,
         add_book,
         get_authors,
