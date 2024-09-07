@@ -56,11 +56,11 @@ https://docs.litestar.dev/latest/tutorials/repository-tutorial/01-modeling-and-f
 
 ## 環境構築
 
-`Python 3.12`で動作します。[Poetry](https://python-poetry.org/)が必要です。
+`Python 3.12`で動作します。[uv](https://github.com/astral-sh/uv)が必要です。
 以下のようにしてLitestarの仮想環境を作成します。
 
 ```shell
-poetry install
+uv venv
 ```
 
 ## Litestarの起動
@@ -68,7 +68,7 @@ poetry install
 以下のようにしてLitestarを起動します。
 
 ```shell
-poetry run litestar run --reload
+uv run litestar run --reload
 ```
 
 ## 対話的APIドキュメント

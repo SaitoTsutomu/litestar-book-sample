@@ -2,10 +2,12 @@ from uuid import UUID
 
 from litestar import Litestar, delete, get, post, put
 from litestar.contrib.sqlalchemy.base import UUIDBase
-from litestar.contrib.sqlalchemy.plugins import (AsyncSessionConfig,
-                                                 SQLAlchemyAsyncConfig,
-                                                 SQLAlchemyInitPlugin,
-                                                 SQLAlchemySerializationPlugin)
+from litestar.contrib.sqlalchemy.plugins import (
+    AsyncSessionConfig,
+    SQLAlchemyAsyncConfig,
+    SQLAlchemyInitPlugin,
+    SQLAlchemySerializationPlugin,
+)
 from litestar.exceptions import HTTPException
 from sqlalchemy import ForeignKey, select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -14,9 +16,7 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 class Author(UUIDBase):
     name: Mapped[str]
-    books: Mapped[list["Book"]] = relationship(
-        back_populates="author", lazy="selectin", cascade="all, delete"
-    )
+    books: Mapped[list["Book"]] = relationship(back_populates="author", lazy="selectin", cascade="all, delete")
 
 
 class Book(UUIDBase):
