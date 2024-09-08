@@ -12,6 +12,7 @@ requires-python = ">=3.12"
 version = "0.2.0"
 
 [tool.mypy]
+files = "src"
 ignore_missing_imports = true
 
 [tool.ruff.lint]
