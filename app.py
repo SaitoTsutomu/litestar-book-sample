@@ -90,7 +90,8 @@ async def update_book(book_id: str, title: str, db_session: AsyncSession) -> Boo
 async def delete_author(author_id: str, db_session: AsyncSession) -> None:
     author = await db_session.get(Author, author_id)
     if author is None:
-        raise HTTPException("Unknown author_id", status_code=400)
+        msg = "Unknown author_id"
+        raise HTTPException(msg, status_code=400)
     await db_session.delete(author)
     await db_session.commit()
 
@@ -99,7 +100,8 @@ async def delete_author(author_id: str, db_session: AsyncSession) -> None:
 async def delete_book(book_id: str, db_session: AsyncSession) -> None:
     book = await db_session.get(Book, book_id)
     if book is None:
-        raise HTTPException("Unknown book_id", status_code=400)
+        msg = "Unknown book_id"
+        raise HTTPException(msg, status_code=400)
     await db_session.delete(book)
     await db_session.commit()
 
